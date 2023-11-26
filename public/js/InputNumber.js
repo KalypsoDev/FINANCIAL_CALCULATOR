@@ -11,12 +11,28 @@ function onclickNumber(event) {
     //nos devuelve por pantalla una cadena de texto
 }
 
+function onClickToggleSign(event) {
+    event.stopPropagation();
+    if (userInput.length === 0) {
+        return; //sale sin hacer nada
+    }
+    if (userInput[0] === '-') {
+        userInput = userInput.substring(1);
+    } else {
+        userInput = `-${userInput}`;
+    }
+
+    displayNumber(userInput);
+}
+
 export function initInputNumber () {
     const number__buttons = document.querySelectorAll(".number");
 
     for (const button of number__buttons) {
         button.addEventListener("click", onclickNumber);
     }
+
+    document.getElementById('positive__negative').addEventListener('click', onClickToggleSign);
 }
 
 export function getUserInput () {
