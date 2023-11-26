@@ -104,6 +104,10 @@ h1 {
     width: 73px;
 }
 
+.row__buttons button img {
+    pointer-events: none; /*la img no va a aceptar eventos de ratón porque ya los coge el botón*/
+}
+
 #clear__all { /*Revisar los selectores para los botones diferentes*/
     background-color: #FF5959;
 }
