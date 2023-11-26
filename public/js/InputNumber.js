@@ -1,4 +1,4 @@
-import { displayNumber } from "./currentOperations.js";
+import { displayNumber } from "./displayOperations.js";
 
 let userInput = "";
 
@@ -47,8 +47,11 @@ export function initInputNumber () { //inicializa todos los eventos de la botone
     document.getElementById('point').addEventListener('click', onClickPoint);
 }
 
-export function getUserInput () {
-    return parseFloat(userInput) 
+export function getUserInput (neutralElement = 0) {
+    if (userInput === '') {
+        return neutralElement;
+    }
+    return parseFloat(userInput);
     //nos devuelve un float a partir del string del usuario
 }
 
