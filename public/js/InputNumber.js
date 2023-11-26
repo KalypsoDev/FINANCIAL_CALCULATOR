@@ -1,4 +1,5 @@
-import { displayNumber } from "./displayOperations.js";
+import { displayNumber, getScreenContent } from "./displayOperations.js";
+import { state } from "./state.js";
 
 let userInput = "";
 
@@ -13,8 +14,11 @@ function onclickNumber(event) {
 
 function onClickToggleSign(event) {
     event.stopPropagation();
-    if (userInput.length === 0) {
-        return; //sale sin hacer nada
+    if (userInput === '') {
+        userInput = getScreenContent();
+        if (userInput === '') { //si no hay nada en la pantalla
+            return; //sale sin hacer nada
+        }
     }
     if (userInput[0] === '-') {
         userInput = userInput.replace("-",""); //quitar el signo -
@@ -35,6 +39,20 @@ function onClickPoint(event) {
     displayNumber(userInput);
 }
 
+function onClickClearAll (event) {
+    event.stopPropagation();
+    userInput = ""; //limpio el input del usuario
+    displayNumber(""); //limpio screen
+
+    state.workingMemory = 0; //limpio memoria de trabajo
+    state.lastOperation = null; //limpio la última operación
+}
+
+function onClickDelete (event) {
+    event.stopPropagation();
+    userInput = userInput.substring(0, userInput.length - 1);
+    displayNumber(userInput);
+}
 
 export function initInputNumber () { //inicializa todos los eventos de la botonera con for o getElement
     const number__buttons = document.querySelectorAll(".number");
@@ -45,6 +63,11 @@ export function initInputNumber () { //inicializa todos los eventos de la botone
 
     document.getElementById('positive__negative').addEventListener('click', onClickToggleSign);
     document.getElementById('point').addEventListener('click', onClickPoint);
+    document.getElementById('clear__all').addEventListener('click', onClickClearAll);
+    document.getElementById('delete').addEventListener('click', onClickDelete);
+
+    
+
 }
 
 export function getUserInput (neutralElement = 0) {
@@ -58,4 +81,3 @@ export function getUserInput (neutralElement = 0) {
 export function resetUserInput () {
     userInput ="";
 }
-
