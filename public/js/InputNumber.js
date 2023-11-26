@@ -17,7 +17,7 @@ function onClickToggleSign(event) {
         return; //sale sin hacer nada
     }
     if (userInput[0] === '-') {
-        userInput.replace("-",""); //quitar el signo -
+        userInput = userInput.replace("-",""); //quitar el signo -
     } else {
         userInput = `-${userInput}`; //añadir el signo -
     }
