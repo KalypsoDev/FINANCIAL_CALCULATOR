@@ -1,11 +1,7 @@
 import { displayNumber } from "./displayOperations.js";
 import { getUserInput, resetUserInput } from "./InputNumber.js";
+import { state } from "./state.js";
 
-const state = {
-    workingMemory: 0,
-    userMemory: 0,
-    lastOperation: null
-}
 
 function calculate(buttonId) {
     let currentValue = state.workingMemory;
