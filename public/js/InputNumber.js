@@ -1,13 +1,14 @@
-let userInput = "";
+import { displayNumber } from "./currentOperations.js";
 
+let userInput = "";
 
 function onclickNumber(event) {
     event.stopPropagation();
     const button = event.target;
     const text__button = button.innerText.trim();
-    userInput += text__button;
-    userInput = parseInt(userInput);
-    // console.log(userInput);
+    userInput += text__button;    
+    displayNumber(userInput) 
+    //nos devuelve por pantalla una cadena de texto
 }
 
 export function initInputNumber () {
@@ -18,8 +19,9 @@ export function initInputNumber () {
     }
 }
 
-export function getUserInput() {
-    return userInput
+export function getUserInput () {
+    return parseFloat(userInput) 
+    //nos devuelve un float a partir del string del usuario
 }
 
 export function resetUserInput () {
