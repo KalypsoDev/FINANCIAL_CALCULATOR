@@ -47,11 +47,11 @@ h1 {
     row-gap: 10px;
 }
 
-#current__operations {
+#current__operations, #previous__operations {
     border: none;
 }
 
-#current__operations:focus {
+#current__operations:focus, #previous__operations:focus {
     outline: none;
 }
 
