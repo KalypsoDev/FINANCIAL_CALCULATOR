@@ -47,10 +47,12 @@ h1 {
     row-gap: 10px;
 }
 
-#current__operations svg{
-    max-height: 20px;
-    width: 1px;
-    color: #000000;
+#current__operations {
+    border: none;
+}
+
+#current__operations:focus {
+    outline: none;
 }
 
 #previous__operations {
