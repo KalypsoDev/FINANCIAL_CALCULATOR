@@ -17,7 +17,7 @@ function onClickToggleSign(event) {
         return; //sale sin hacer nada
     }
     if (userInput[0] === '-') {
-        userInput.replace("-",""); //quitar el signo -
+        userInput = userInput.replace("-",""); //quitar el signo -
     } else {
         userInput = `-${userInput}`; //añadir el signo -
     }
@@ -25,7 +25,18 @@ function onClickToggleSign(event) {
     displayNumber(userInput);
 }
 
-export function initInputNumber () {
+function onClickPoint(event) {
+    event.stopPropagation();
+    if (userInput.length === 0 || userInput.includes(".")) {
+        return; //sale sin hacer nada
+    }
+    userInput = `${userInput}.`;
+
+    displayNumber(userInput);
+}
+
+
+export function initInputNumber () { //inicializa todos los eventos de la botonera con for o getElement
     const number__buttons = document.querySelectorAll(".number");
 
     for (const button of number__buttons) {
@@ -33,6 +44,7 @@ export function initInputNumber () {
     }
 
     document.getElementById('positive__negative').addEventListener('click', onClickToggleSign);
+    document.getElementById('point').addEventListener('click', onClickPoint);
 }
 
 export function getUserInput () {
