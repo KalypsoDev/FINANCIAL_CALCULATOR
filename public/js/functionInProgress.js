@@ -4,7 +4,7 @@ function functionInProgress(event) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+export function initFunctionInProgress () {
     const calculator__buttons = document.querySelector("#calculator__buttons");
     calculator__buttons.addEventListener("click", functionInProgress)
-})
+}
