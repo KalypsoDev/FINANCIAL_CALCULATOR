@@ -69,14 +69,16 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 23px;
+    column-gap: 15px;
 }
 
 #memory__bar button {
     background-color: #343434;
     border-radius: 5px;
-    height: 51,5px;
-    width: 43px;
+    padding: 10px;
+    min-height: 51,5px;
+    min-width: 43px;
+
 }
 
 #memory__bar button img {
