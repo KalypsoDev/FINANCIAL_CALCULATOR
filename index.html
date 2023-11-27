@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalypso Calculator</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./src/assets/icons/calculator_favicon.jpg" type="image/x-icon">
+    <script type="module" src="./public/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Kalypso Calculator</h1>
+    </header>
+    <main>
+        <section id="container__calculator">
+            <div id="calculator__screen">
+                <input id="current__operations" placeholder="Escribe tu número" readonly>
+                <input id="previous__operations" placeholder="Operación anterior" readonly>
+            </div>
+            <div id="calculator__buttons">
+                <div id="memory__bar">
+                    <button id="memory__clear">
+                        <img src="./src/assets/icons/MC.svg" alt="Clear any number from the memory">
+                    </button>
+                    <button id="memory__recall">
+                        <img src="./src/assets/icons/MR.svg" alt="Recall any number from the memory">
+                    </button>
+                    <button id="memory__plus">
+                        <img src="./src/assets/icons/M+.svg" alt="Add this number to another one already storaged in the memory">                        
+                    </button>
+                    <button id="memory__minus">
+                        <img src="./src/assets/icons/M-.svg" alt="Substract this number from another one already storaged in the memory"> 
+                    </button>
+                    <button id="memory__storage">
+                        <img src="./src/assets/icons/MS.svg" alt="Store this number in the memory"> 
+                    </button>
+                </div>
+                <div id="operation__buttons">
+                    <div id="row1" class="row__buttons">
+                        <button id="clear__all">
+                            <img src="./src/assets/icons/C.svg" alt="Clear all"> 
+                        </button>
+                        <button id="delete">
+                            <img src="./src/assets/icons/arrow.svg" alt="Delete">                                
+                        </button>
+                        <button id="percentage">
+                            <img src="./src/assets/icons/percentage.svg" alt="Percentage"> 
+                        </button>
+                        <button id="brackets">
+                            <img src="./src/assets/icons/brackets.svg" alt="Brackets">                               
+                        </button>
+                    </div>
+                    <div id="row2" class="row__buttons">
+                        <button id="fraction">
+                            <img src="./src/assets/icons/fraction.svg" alt="Fraction"> 
+                        </button>
+                        <button id="power">
+                            <img src="./src/assets/icons/power.svg" alt="Power"> 
+                        </button>
+                        <button id="square__root">
+                            <img src="./src/assets/icons/square root.svg" alt="Square root"> 
+                        </button>
+                        <button class="basic__operation" id="divisor__sign">
+                            <img src="./src/assets/icons/divisor sign.svg" alt="Divisor sign"> 
+                        </button>
+                    </div>
+                    <div id="row3" class="row__buttons">
+                        <button class="number">7</button>
+                        <button class="number">8</button>
+                        <button class="number">9</button>
+                        <button class="basic__operation" id="multiplier__sign">
+                            <img src="./src/assets/icons/multiplier sign.svg" alt="Multiplier sign"> 
+                        </button>
+                    </div>
+                    <div id="row4" class="row__buttons">
+                        <button class="number">4</button>
+                        <button class="number">5</button>
+                        <button class="number">6</button>
+                        <button class="basic__operation" id="minus__sign">
+                            <img src="./src/assets/icons/minus sign.svg" alt="Minus sign"> 
+                        </button>
+                    </div>
+                    <div id="row5" class="row__buttons">
+                        <button class="number">1</button>
+                        <button class="number">2</button>
+                        <button class="number">3</button>
+                        <button class="basic__operation" id="plus__sign">
+                            <img src="./src/assets/icons/plus sign.svg" alt="Plus sign"> 
+                        </button>
+                    </div>
+                    <div id="row6" class="row__buttons">
+                        <button id="positive__negative">
+                            <img src="./src/assets/icons/positive and negative.svg" alt="Positive and negative numbers"> 
+                        </button>
+                        <button class="number">0</button>
+                        <button id="point">
+                            <img src="./src/assets/icons/point.svg" alt="Point"> 
+                        </button>
+                        <button class="basic__operation" id="equality__sign">
+                            <img src="./src/assets/icons/equality sign.svg" alt="Equality sign"> 
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="footer__copyright">
+            <p>Copyright © 2023 KalypsoCalculator - All rights reserved</p>
+        </section>
+    </footer>
+</body>
+</html>
