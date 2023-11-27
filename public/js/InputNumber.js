@@ -1,4 +1,4 @@
-import { displayNumber, getScreenContent } from "./displayOperations.js";
+import { displayNumber, displayOperation, getScreenContent } from "./displayOperations.js";
 import { state } from "./state.js";
 
 let userInput = "";
@@ -43,9 +43,9 @@ function onClickClearAll (event) {
     event.stopPropagation();
     userInput = ""; //limpio el input del usuario
     displayNumber(""); //limpio screen
-
+    displayOperation(""); //limpio el historial
     state.workingMemory = 0; //limpio memoria de trabajo
-    state.lastOperation = null; //limpio la última operación
+    state.lastOperator = null; //limpio la última operación
 }
 
 function onClickDelete (event) {
@@ -66,12 +66,10 @@ export function initInputNumber () { //inicializa todos los eventos de la botone
     document.getElementById('clear__all').addEventListener('click', onClickClearAll);
     document.getElementById('delete').addEventListener('click', onClickDelete);
 
-    
-
 }
 
-export function getUserInput (neutralElement = 0) {
-    if (userInput === '') {
+export function getUserInput (neutralElement) {
+    if (userInput === '') { //si no mete nada, devuelve elemento neutral
         return neutralElement;
     }
     return parseFloat(userInput);
@@ -80,4 +78,8 @@ export function getUserInput (neutralElement = 0) {
 
 export function resetUserInput () {
     userInput ="";
+}
+
+export function setUserInput (value) {
+    userInput = value;
 }
