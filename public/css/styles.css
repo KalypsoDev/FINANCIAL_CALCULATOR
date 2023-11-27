@@ -1,5 +1,3 @@
-/*Mirar que los svgs tengan el estilo en el css no inline*/
-
 * {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -81,6 +79,9 @@ h1 {
     width: 43px;
 }
 
+#memory__bar button img {
+    pointer-events: none; /*la img no va a aceptar eventos de ratón porque ya los coge el botón*/
+}
 
 #operation__buttons {
     display: flex;
