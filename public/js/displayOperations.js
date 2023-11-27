@@ -3,8 +3,14 @@ export function displayNumber (userInput) {
     currentNumber.value = userInput; //aquí estoy escribiendo en value
 }
 
+export function displayOperation (userInput) {
+    const currentNumber = document.querySelector("#previous__operations");
+    currentNumber.value = userInput; //aquí estoy escribiendo en value
+}
+
 export function initDisplayOperations () {
     displayNumber("");
+    displayOperation('');
 }
 
 export function getScreenContent () {

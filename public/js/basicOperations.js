@@ -1,26 +1,39 @@
-import { displayNumber } from "./displayOperations.js";
-import { getUserInput, resetUserInput } from "./InputNumber.js";
+import { displayNumber, displayOperation, getScreenContent } from "./displayOperations.js";
+import { getUserInput, resetUserInput, setUserInput } from "./InputNumber.js";
 import { state } from "./state.js";
 
 
 function calculate(buttonId) {
     let currentValue = state.workingMemory;
+
     switch (buttonId) {
         case null: //cuando no hay operación anterior
             currentValue = getUserInput(0);
             break;
-        case "plus__sign":
-            currentValue += getUserInput(0);
+        case "plus__sign": {
+            const operand = getUserInput(0)
+            displayOperation(`${currentValue} + ${operand}`)
+            currentValue += operand;
             break;
-        case "minus__sign":
-            currentValue -= getUserInput(0);            
+        }
+        case "minus__sign": {
+            const operand = getUserInput(0);
+            displayOperation(`${currentValue} - ${operand}`)
+            currentValue -= operand
             break;
-        case "multiplier__sign":
-            currentValue *= getUserInput(1);      
+        }
+        case "multiplier__sign": {
+            const operand = getUserInput(1);
+            displayOperation(`${currentValue} * ${operand}`)
+            currentValue *= operand
             break;
-        case "divisor__sign":
-            currentValue /= getUserInput(1);            
+        }
+        case "divisor__sign": {
+            const operand = getUserInput(1);
+            displayOperation(`${currentValue} / ${operand}`)
+            currentValue /= operand
             break;
+        }
     }
 
     resetUserInput();
@@ -33,14 +46,18 @@ function onClickBasicOperations(event) {
     const button = event.target;
     const buttonId = button.id;
 
+    if (getUserInput() === undefined) { //si no le paso parámetro y la cadena está vacía porque el usuario no ha metido ningún número, me devuelve undefined
+        setUserInput(getScreenContent()); //cuando el usuario no ha metido nada, cogemos lo de la pantalla
+    }
 
-    calculate(state.lastOperation)
+    calculate(state.lastOperator)
 
     displayNumber(state.workingMemory)
+
     if (buttonId !== "equality__sign") {
-        state.lastOperation = buttonId;
+        state.lastOperator = buttonId;
     } else {
-        state.lastOperation = null;
+        state.lastOperator = null;
         state.workingMemory = 0;
     }
 }
