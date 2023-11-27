@@ -125,3 +125,14 @@ footer p {
     font-size: small;
     padding: 5px;
 }
+
+@media (min-width: 480px) {
+    body {
+        min-height: 100vh;
+    }
+    #container__calculator {
+        min-height: 800px;
+        min-width: 400px;
+    }
+
+}
