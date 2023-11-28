@@ -45,7 +45,7 @@ function onClickClearAll (event) {
     displayNumber(""); //limpio screen
     displayOperation(""); //limpio el historial
     state.workingMemory = 0; //limpio memoria de trabajo
-    state.lastOperator = null; //limpio el último operador
+    state.lastOperator = null; //limpio la última operación
 }
 
 function onClickDelete (event) {
