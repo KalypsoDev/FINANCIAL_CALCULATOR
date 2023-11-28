@@ -9,21 +9,20 @@ function onclickNumber(event) {
     const text__button = button.innerText.trim();
     userInput += text__button;    
     displayNumber(userInput) 
-    //nos devuelve por pantalla una cadena de texto
 }
 
 function onClickToggleSign(event) {
     event.stopPropagation();
     if (userInput === '') {
         userInput = getScreenContent();
-        if (userInput === '') { //si no hay nada en la pantalla
-            return; //sale sin hacer nada
+        if (userInput === '') { 
+            return;
         }
     }
     if (userInput[0] === '-') {
-        userInput = userInput.replace("-",""); //quitar el signo -
+        userInput = userInput.replace("-",""); 
     } else {
-        userInput = `-${userInput}`; //añadir el signo -
+        userInput = `-${userInput}`; 
     }
 
     displayNumber(userInput);
@@ -32,7 +31,7 @@ function onClickToggleSign(event) {
 function onClickPoint(event) {
     event.stopPropagation();
     if (userInput.length === 0 || userInput.includes(".")) {
-        return; //sale sin hacer nada
+        return; 
     }
     userInput = `${userInput}.`;
 
@@ -41,11 +40,11 @@ function onClickPoint(event) {
 
 function onClickClearAll (event) {
     event.stopPropagation();
-    userInput = ""; //limpio el input del usuario
-    displayNumber(""); //limpio screen
-    displayOperation(""); //limpio el historial
-    state.workingMemory = 0; //limpio memoria de trabajo
-    state.lastOperator = null; //limpio el último operador
+    userInput = ""; 
+    displayNumber(""); 
+    displayOperation(""); 
+    state.workingMemory = 0; 
+    state.lastOperator = null; 
 }
 
 function onClickDelete (event) {
@@ -54,7 +53,7 @@ function onClickDelete (event) {
     displayNumber(userInput);
 }
 
-export function initInputNumber () { //inicializa todos los eventos de la botonera con for o getElement
+export function initInputNumber () { 
     const number__buttons = document.querySelectorAll(".number");
 
     for (const button of number__buttons) {
@@ -69,11 +68,10 @@ export function initInputNumber () { //inicializa todos los eventos de la botone
 }
 
 export function getUserInput (neutralElement) {
-    if (userInput === '') { //si no mete nada, devuelve elemento neutral
+    if (userInput === '') { 
         return neutralElement;
     }
     return parseFloat(userInput);
-    //nos devuelve un float a partir del string del usuario
 }
 
 export function resetUserInput () {

@@ -1,11 +1,11 @@
 export function displayNumber (userInput) {
     const currentNumber = document.querySelector("#current__operations");
-    currentNumber.value = userInput; //aquí estoy escribiendo en value
+    currentNumber.value = userInput;
 }
 
 export function displayOperation (userInput) {
     const currentNumber = document.querySelector("#previous__operations");
-    currentNumber.value = userInput; //aquí estoy escribiendo en value
+    currentNumber.value = userInput;
 }
 
 export function initDisplayOperations () {
