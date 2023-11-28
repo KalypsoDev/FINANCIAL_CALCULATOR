@@ -13,11 +13,6 @@ body {
     row-gap: 10px;
 }
 
-/*div {
-    outline: solid red; /*QUITAR CUANDO ACABE DE MAQUETAR* /
-}
-*/
-
 h1 {
     text-align: center;
     padding: 5px;
@@ -88,7 +83,7 @@ h1 {
 }
 
 #memory__bar button img {
-    pointer-events: none; /*la img no va a aceptar eventos de ratón porque ya los coge el botón*/
+    pointer-events: none;
 }
 
 #operation__buttons {
@@ -116,14 +111,14 @@ h1 {
 }
 
 .row__buttons button img {
-    pointer-events: none; /*la img no va a aceptar eventos de ratón porque ya los coge el botón*/
+    pointer-events: none;
 }
 
-#clear__all { /*Revisar los selectores para los botones diferentes*/
+#clear__all { 
     background-color: #FF5959;
 }
 
-#equality__sign { /*Revisar los selectores para los botones diferentes*/
+#equality__sign { 
     background-color: #66FF7F;
 }
 

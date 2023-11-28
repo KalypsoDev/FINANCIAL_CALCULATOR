@@ -7,7 +7,7 @@ function calculate(buttonId) {
     let currentValue = state.workingMemory;
 
     switch (buttonId) {
-        case null: //cuando no hay operación anterior
+        case null:
             currentValue = getUserInput(0);
             break;
         case "plus__sign": {
@@ -46,8 +46,8 @@ function onClickBasicOperations(event) {
     const button = event.target;
     const buttonId = button.id;
 
-    if (getUserInput() === undefined) { //si no le paso parámetro y la cadena está vacía porque el usuario no ha metido ningún número, me devuelve undefined
-        setUserInput(getScreenContent()); //cuando el usuario no ha metido nada, cogemos lo de la pantalla
+    if (getUserInput() === undefined) { 
+        setUserInput(getScreenContent());
     }
 
     calculate(state.lastOperator)
